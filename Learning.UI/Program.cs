@@ -7,6 +7,7 @@ namespace Learning.UI
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            //komentář
         }
     }
 }
