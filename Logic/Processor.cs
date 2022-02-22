@@ -13,6 +13,16 @@ namespace Logic
     /// </summary>
         public void Run()
         {
+            PeopleProcess();
+            
+            Car tomasCar = new Car();
+            tomasCar.SetMark("Toyota");
+            Console.WriteLine("Tomáš has a car with mark: " + tomasCar.GetMark());
+
+        }
+
+        private void PeopleProcess()
+        {
             Person mirek = new Person();
             mirek.FirstName = "Mirek";
             mirek.LastName = "Vaculka";
@@ -23,7 +33,7 @@ namespace Logic
             sabina.LastName = "Kovaříková";
             sabina.Age = 25;
             sabina.Weight = 55m;    // pro formát decimal m
-            
+
 
             List<Person> people = new List<Person>();
             people.Add(sabina);
@@ -35,7 +45,6 @@ namespace Logic
                 Console.WriteLine(person.FirstName);
             }
             sabina.Walk();
-
         }
     }
 }
