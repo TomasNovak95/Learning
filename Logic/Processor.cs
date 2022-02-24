@@ -1,4 +1,5 @@
 ﻿using Logic.Models;
+using Logic.Models.Animal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,46 @@ namespace Logic
         {
             //PeopleProcess();
             //CarProcess();
-            
-            Animal animal = new Animal(4);      // zde musím zadat počet nohou, protože tam mám Construktor
-            Console.WriteLine(animal.NumberOfLegs);
-            Animal animal2 = new Animal(2, "Pepa");
+            //AnimalProcess();
+            Enum.Force force = Enum.Force.Fx;
+
+            switch (force)
+            {
+                case Enum.Force.Fx:
+                    break;
+                case Enum.Force.Fy:
+                    break;
+                case Enum.Force.Fz:
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        private void AnimalProcess()
+        {
+            Animal universalAnimal = new Animal(4);      // zde musím zadat počet nohou, protože tam mám Construktor
+            Console.WriteLine(universalAnimal.NumberOfLegs);
+            Animal papousek = new Animal(2, "Pepa");
+            Dog dog = new Dog("Mira", true);
+            universalAnimal.MakeNoise();
+            dog.MakeNoise();
+            dog.TailSwing();
+
+            List<Animal> animals = new List<Animal>
+            {
+                papousek, dog
+            };
+            foreach (Animal animal in animals)
+            {
+                Console.WriteLine($"Animal { animal.Name} sayes:");
+                animal.MakeNoise();
+                if (animal is Dog)
+                {
+                    (animal as Dog).TailSwing();    // Casting - vybírá pouze instance typu Dog
+                }
+            }
         }
 
         private void CarProcess()
